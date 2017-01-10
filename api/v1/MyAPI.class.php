@@ -3,7 +3,7 @@ require('api.class.php');
 //require_once('models/ApiKey.class.php');
 //require_once('models/User.class.php');
 
-require_once('rivil/managertool.php');
+require_once('rivil/managerelement.php');
 
 class MyAPI extends API
 {
@@ -36,14 +36,20 @@ class MyAPI extends API
 	/**
 	 * Login
 	 */
-	public function tool() {
+	public function element() {
 
-		$manager = new ToolManager();
+		echo "hello";
+		
+		$manager = new ElementManager();
 		
 		// create class
 		switch($this->method) {
 			case 'GET':
-				echo $manager->get($this->request);
+				switch($this->verb) {
+					case "tiles":
+						echo $manager->getTiles($this->args);
+					break;
+				}
 				break;
 		}
 	}

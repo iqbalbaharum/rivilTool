@@ -8,20 +8,18 @@ class Database
 	const SERVER_PASSWORD = "";
 	const SERVER_DB = "ccms";*/
 
-	const SERVER_ADDRESS = "sql.b2b.nazwa.pl";
-	const SERVER_USERNAME = "b2b";
-	const SERVER_PASSWORD = "Kerala370284";
-	const SERVER_DB = "b2b";
+	const SERVER_ADDRESS = "rivil.cyptiultss7k.ap-southeast-1.rds.amazonaws.com:3306";
+	const SERVER_USERNAME = "root";
+	const SERVER_PASSWORD = "";
+	const SERVER_DB = "elements";
 
 	private $connection;
 	
 	private $error_code = "";
 	
-	const R_ER = 100;
-	const R_USER = 101;
-	
-	const TB_ER = "erecord";
-	const TB_USER = "user";
+	const R_ELEMENT = 101;
+
+	const TB_ELEMENT = "element"
 
 	/**
 	 * CONSTRUCTOR
@@ -341,11 +339,8 @@ class Database
 		 $szName = "";
 		 
 		 switch($type) {
-			 case self::R_ER:
-				$szName = self::TB_ER;
-			 break;
-			 case self::R_USER:
-			 	$szName = self::TB_USER;
+			 case self::R_ELEMENT:
+				$szName = self::TB_ELEMENT;
 			 break;
 		 }
 		 
